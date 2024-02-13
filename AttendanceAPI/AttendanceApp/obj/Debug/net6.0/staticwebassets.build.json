@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6LI+HmJwOAvGpW2wid3FhE8c7QDtGK90/bJjqoy2tLQ=",
+  "Source": "AttendanceApp",
+  "BasePath": "_content/AttendanceApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
