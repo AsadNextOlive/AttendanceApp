@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ErrorResponseService>();
+builder.Services.AddScoped<ValidationService>();
 
 builder.Configuration.AddJsonFile("appsettings.json");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -19,8 +20,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerConnection"));
 });
 
-builder.Services.AddScoped<ErrorResponseService>();
-builder.Services.AddScoped<ValidationService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eExNn8dT/cqiL/W2u2iEftj7yRirFznPLt3GTFULc3AibpMrZZyWCn+jKp76DTI3RuVq0Qt1/FwpKlFa1x9SGA==",
+  "dgSpecHash": "5VyUzyLqhR1uT1ferTSeVfWl5f2jzE+ePGx4vT1Dw9kWQFhOvHnEX6124Q6A5WOXFKECXGaTlhtTIbWHnkzbTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\AttendanceApp.csproj",
+  "projectFilePath": "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nextolive\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Nextolive\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

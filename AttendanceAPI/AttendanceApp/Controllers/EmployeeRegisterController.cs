@@ -4,12 +4,15 @@ using AttendanceApp.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace AttendanceApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
     public class EmployeeRegisterController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -25,7 +28,7 @@ namespace AttendanceApp.Controllers
 
         //POST: api/EployeeRegister
         [HttpPost]
-        public async Task<ActionResult<EmployeeRegister>> EmployeeRegister(EmployeeRegister employeeRegister)
+        public async Task<ActionResult<EmployeeRegister>> EmployeeRegister([FromForm] EmployeeRegister employeeRegister)  //Modifying Method for File Upload
         {
             try
             {
@@ -68,6 +71,22 @@ namespace AttendanceApp.Controllers
                         return BadRequest(errorResponse);
                     }
 
+                    // Check if a file is uploaded
+                    var file = HttpContext.Request.Form.Files.FirstOrDefault();
+                    if (file == null)
+                    {
+                        var errorResponse = _errorResponseService.CreateErrorResponse(400, "Please Upload Profile");
+                        return BadRequest(errorResponse);
+                    }
+                    if (file != null)
+                    {
+                        // Save the file and get the filename
+                        string filename = await WriteFile(file);
+
+                        // Set the file path in the EmployeeRegister model
+                        employeeRegister.EmployeeProfile = filename;
+                    }
+
                     _context.EmployeeRegister.Add(employeeRegister);
                     await _context.SaveChangesAsync();
 
@@ -84,10 +103,57 @@ namespace AttendanceApp.Controllers
             }
             catch (Exception)
             {
-                var errorResponse = _errorResponseService.CreateErrorResponse(500, "Internal Server Error");
+                var errorResponse = _errorResponseService.CreateErrorResponse(500, $"Internal Server Error");
                 return StatusCode(500, errorResponse);
             }
         }
-        
+
+        //Post Method to Upload File
+        private async Task<string> WriteFile(IFormFile file)
+        {
+            string filename = "";
+            try
+            {
+                var extension = "." + file.FileName.Split('.').LastOrDefault();
+                filename = $"{DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture)}{extension}";
+
+                var directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads\\Files");
+
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                var filePath = Path.Combine(directoryPath, filename);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                // Save the full file path to the database
+                //SaveFilePathToDatabase(filePath);
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"File Not Stored in the Database. Error: {ex.Message}");
+                return string.Empty;
+            }
+            return filename;
+        }
+
+        private void SaveFilePathToDatabase(string filePath)
+        {
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("File not Stored into the Datbase");
+            }
+
+        }
     }
 }

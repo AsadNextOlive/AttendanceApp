@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\AttendanceApp.csproj": {}
+    "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\AttendanceApp.csproj": {
+    "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\AttendanceApp.csproj",
+        "projectUniqueName": "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj",
         "projectName": "AttendanceApp",
-        "projectPath": "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\AttendanceApp.csproj",
+        "projectPath": "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj",
         "packagesPath": "C:\\Users\\Nextolive\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nextolive\\Documents\\Visual Studio 2022\\Project\\AttendanceApp\\AttendanceApp\\obj\\",
+        "outputPath": "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nextolive\\AppData\\Roaming\\NuGet\\NuGet.Config",
