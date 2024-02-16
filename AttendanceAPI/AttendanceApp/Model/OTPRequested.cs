@@ -8,8 +8,8 @@ namespace AttendanceApp.Model
         public int otpRequestId { get; set; }
         [Required]
         public string employeeEmail { get; set; }
-        public int OTP { get; set; }
-        public string otpStatus { get; set; }
+        public string OTP { get; set; }
+        public bool otpStatus { get; set; }
         public DateTime otpExpired { get; set; }
         public DateTime lastUpdated { get; set; } = DateTime.Now;
     }
