@@ -54,7 +54,7 @@ namespace AttendanceApp.Controllers
             }
             catch (Exception)
             {
-                var errorResponse = _errorResponseService.CreateErrorResponse(500, "Internal Server Error");
+                var errorResponse = _errorResponseService.CreateErrorResponse(500, $"Internal Server Error");
                 return BadRequest(errorResponse);
             }
         }
@@ -142,7 +142,7 @@ namespace AttendanceApp.Controllers
 
 
 
-        //POST: api/EployeeRegister
+        //POST: api/EmployeeRegister
         [HttpPost]
         public async Task<ActionResult<EmployeeRegister>> EmployeeRegister([FromForm] EmployeeRegister employeeRegister)  //Modifying Method for File Upload
         {
@@ -206,6 +206,8 @@ namespace AttendanceApp.Controllers
                     _context.EmployeeRegister.Add(employeeRegister);
                     await _context.SaveChangesAsync();
 
+                    //Calling GenerateAndSendOTP API
+                    await GenerateAndSendOTP(employeeRegister.EmployeeEmail);
 
                     var response = new
                     {

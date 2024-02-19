@@ -10,6 +10,7 @@ namespace AttendanceApp.Data
         public DbSet<Department> Department { get; set; }
         public DbSet<EmployeeRegister> EmployeeRegister { get; set; }
         public DbSet<OTPRequested> OTPRequested { get; set; }
+        public DbSet<Login> Login { get; set; }
 
         //ViewModel
         public DbSet<CustomErrorResponseViewModel> CustomErrorResponseViewModel { get; set; }
@@ -21,6 +22,7 @@ namespace AttendanceApp.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CustomErrorResponseViewModel>().HasNoKey();
+            modelBuilder.Entity<Login>().HasNoKey();
         }
     }
 }

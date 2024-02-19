@@ -19,5 +19,6 @@ namespace AttendanceApp.Model
         public string Address { get; set; }
         public string? EmployeeProfile { get; set; }
         public DateTime LastUpdate { get; set; } = DateTime.Now;
+        public int AccountType { get; set; } = 1;
     }
 }
