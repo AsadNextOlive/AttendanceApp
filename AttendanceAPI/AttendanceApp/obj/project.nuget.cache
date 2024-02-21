@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OO0yzuTQHrX0ynrK8kvKizERTb/hLOvTiCj8Pl2Jt0L/N38tgC4g2GfG5OQxn4sKAuSyPGiMR0EWEUYIfIed2g==",
+  "dgSpecHash": "SMQsD1GwOe159TV89f6DYH7kOxmcWn7PEy9YcWKIbJUITf5e5v8H84iHLam0cNiABfet6YFwclkfxkNi2pypeg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nextolive\\Documents\\GitHub\\AttendanceApp\\AttendanceAPI\\AttendanceApp\\AttendanceApp.csproj",
   "expectedPackageFiles": [
@@ -52,11 +52,7 @@
     "C:\\Users\\Nextolive\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Nextolive\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Nextolive\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "C:\\Users\\Nextolive\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Nextolive\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Nextolive\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Nextolive\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Nextolive\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
+    "C:\\Users\\Nextolive\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

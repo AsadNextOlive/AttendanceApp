@@ -11,6 +11,7 @@ namespace AttendanceApp.Data
         public DbSet<EmployeeRegister> EmployeeRegister { get; set; }
         public DbSet<OTPRequested> OTPRequested { get; set; }
         public DbSet<Login> Login { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
 
         //ViewModel
         public DbSet<CustomErrorResponseViewModel> CustomErrorResponseViewModel { get; set; }

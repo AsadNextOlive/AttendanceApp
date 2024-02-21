@@ -68,5 +68,36 @@ namespace AttendanceApp.Controllers
             }
             return BadRequest(ModelState);
         }
+
+        //POST: SignOut
+        [HttpPost]
+        [Route("SignOut")]
+        public IActionResult SignOut()
+        {
+            try
+            {
+                var login = new Login
+                {
+                    isLoggedIn = false
+                };
+
+                var response = new
+                {
+                    Status = 200,
+                    Message = "Sign Out Successful",
+                    Data = new
+                    {
+                        login.isLoggedIn
+                    }
+                };
+
+                return Created("", response);
+            }
+            catch (Exception)
+            {
+                var errorResponse = _errorResponseService.CreateErrorResponse(500, "Internal Server Error");
+                return BadRequest(errorResponse);
+            }
+        }
     }
 }

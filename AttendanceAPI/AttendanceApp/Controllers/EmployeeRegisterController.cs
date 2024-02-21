@@ -100,7 +100,6 @@ namespace AttendanceApp.Controllers
 
 
 
-
         //GET: Employee By Email
         [HttpGet]
         [Route("GetEmployeeRegisterByEmail")]
@@ -139,6 +138,55 @@ namespace AttendanceApp.Controllers
                 return BadRequest(errorResponse);
             }
         }
+
+
+
+        //GET: Employees By DepartmentId
+        [HttpGet]
+        [Route("GetEmployeesByDepartmentId")]
+        public async Task<ActionResult<IEnumerable<object>>> GetEmployeesByDepartmentId([FromQuery] int departmentId)
+        {
+            try
+            {
+                if (departmentId <= 0)
+                {
+                    var errorResponse = _errorResponseService.CreateErrorResponse(400, "Please provide a valid DepartmentId");
+                    return BadRequest(errorResponse);
+                }
+
+                var employeeRegisterList = await _context.EmployeeRegister
+                    .Where(e => e.DepartmentId == departmentId)
+                    .Select(e => new
+                    {
+                        EmployeeId = e.EmployeeId,
+                        EmployeeEmail = e.EmployeeEmail,
+                        EmployeeName = e.EmployeeName
+                    })
+                    .ToListAsync();
+
+                if (employeeRegisterList.Count == 0)
+                {
+                    var errorResponse = _errorResponseService.CreateErrorResponse(404, $"No employees found for DepartmentId: {departmentId}");
+                    return NotFound(errorResponse);
+                }
+
+                var response = new
+                {
+                    Status = 200,
+                    Message = "Data found successfully",
+                    Data = employeeRegisterList
+                };
+
+                return Ok(response);
+            }
+            catch (Exception)
+            {
+                var errorResponse = _errorResponseService.CreateErrorResponse(500, "Internal Server Error");
+                return BadRequest(errorResponse);
+            }
+        }
+
+
 
 
 
