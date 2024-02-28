@@ -1,0 +1,68 @@
+/* .main-wrap{
+    margin-top: 58px;
+    margin-left: 235px;
+} */
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    height: 150px;
+    margin: 8px 1%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dash-box:hover{
+    border: 2px solid #000;
+    background-color: #343a407c;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+
+.d-box-colour1{
+    background-color: #343a4069;
+}
+
+.d-box-colour2{
+    background-color: #343a4069;
+}
+
+.d-box-colour3{
+    background-color: #343a4069;
+}
+
+.d-box-colour4{
+    background-color: #343a4069;
+}
+
+.wrapper a{
+    color: #000;
+    text-decoration: none;
+}
+.wrapper a:hover{
+    /* text-decoration: underline; */
+    color: #fff;
+}
+
+@media Only Screen and (max-width: 550px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .dash-box{
+        width: 100%;
+    }
+}
+
+@media Only Screen and (max-width: 992px){
+    .main-wrap{
+        margin-left: 0px;
+    }
+}
+

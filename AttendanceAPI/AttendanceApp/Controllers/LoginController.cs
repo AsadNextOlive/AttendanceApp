@@ -13,7 +13,6 @@ namespace AttendanceApp.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ErrorResponseService _errorResponseService;
-
         public LoginController(ApplicationDbContext context, ErrorResponseService errorResponseService)
         {
             _context = context;

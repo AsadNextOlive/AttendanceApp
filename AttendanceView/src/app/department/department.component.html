@@ -1,0 +1,41 @@
+<main>
+  <div class="pt-4">
+    <div class="mb-4">
+      <a routerLink="">Admin</a> > <a href="#">Department</a>
+    </div>
+    <div>
+      <h3>Department</h3>
+    </div>
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <input type="hidden" name="DepartmentId" [value]="service.formData.DepartmentId">
+      <div class="form-group">
+        <label for="DepartmentName">Department Name</label>
+        <input type="text" class="form-control col-3" #DepartmentName="ngModel" name="DepartmentName" [(ngModel)]="service.formData.DepartmentName" required>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-sm btn-outline-primary mr-2" type="submit" [disabled]="!form.value">Submit</button>
+        <button class="btn btn-sm btn-outline-danger" type="reset">Cancle</button>
+      </div>
+    </form>
+    <!-- <app-department-list></app-department-list> -->
+    <div class="mt-5">
+      <h3 class="text-center">Department List</h3>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="sticky-top">
+          <th scope="col">Department ID</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="service.list.length > 0">
+        <tr *ngFor="let dl of service.list">
+          <th scope="row">{{dl.DepartmentId}}</th>
+          <td>{{dl.DepartmentName}}</td>
+          <td>Delete</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
